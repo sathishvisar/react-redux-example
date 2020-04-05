@@ -1,18 +1,30 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { createBrowserHistory } from "history"
+import { compose, createStore } from "redux";
+import { Provider } from "react-redux";
 
 // Views
-import Home from './Views/Home'
+import Home from './views/Home'
 
 // Componets
-import Counter from './Components/Counter'
+import CounterContainer from './components/counter/CounterContainer'
 
 // Containers
-import GeneralContainer from './Layout/GeneralContainer'
+import GeneralContainer from './layout/GeneralContainer'
+
+// Store
+import rootReducer from "./store/reducers/index"
 
 // General Layouts
 const defaultLayout = (ComponentComp) => () => <GeneralContainer><ComponentComp/></GeneralContainer>;
+
+// Create store
+const enhancer = compose(
+    window.__REDUX_DEVTOOLS_EXTENSION__ && 
+    window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
+const store = createStore(rootReducer, enhancer);
 
 class App extends React.Component{
     render(){
@@ -20,12 +32,14 @@ class App extends React.Component{
 
         return(
             <React.Fragment>
-                <BrowserRouter>
-                    <Switch history={customHistory}>
-                        <Route path="/" exact={true} render={defaultLayout(Home)} />
-                        <Route path="/counter" render={defaultLayout(Counter)} />
-                    </Switch>
-                </BrowserRouter>
+                <Provider store={store}>
+                    <BrowserRouter>
+                        <Switch history={customHistory}>
+                            <Route path="/" exact={true} render={defaultLayout(Home)} />
+                            <Route path="/counter" render={defaultLayout(CounterContainer)} />
+                        </Switch>
+                    </BrowserRouter>
+                </Provider>
             </React.Fragment>
         )
     }
