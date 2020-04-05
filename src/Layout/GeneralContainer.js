@@ -12,7 +12,9 @@ class GeneralContainer extends React.Component{
         return(
             <React.Fragment>
                 <Header />
-                    { children }
+                    <main>
+                        { children }
+                    </main>
                 <Footer />
             </React.Fragment>
         )
