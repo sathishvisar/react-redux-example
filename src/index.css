@@ -21,4 +21,5 @@ ul li{list-style: none;}
 main{
   width: 80%;
   margin: 0px auto;
+  min-height: calc(100vh - 200px);
 }
