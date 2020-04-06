@@ -6,13 +6,13 @@ import Todo from './Todo';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    todo: state.todo
+    todos: state.todos
   }
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    adduser: (options) => {
+    addTodo: (options) => {
       dispatch(addTodo(options))
     }
   }
