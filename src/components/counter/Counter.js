@@ -12,9 +12,9 @@ class Counter extends React.Component{
                 <h2>Counter Component</h2>
                 <br/>
                 <div className={"counterSection"}>
-                    <button onClick={() => this.props.decrement()}> - </button>
+                    <button className={'counter'} onClick={() => this.props.decrement()}> - </button>
                     <h1>{this.props.counter}</h1>
-                    <button onClick={() => this.props.increment()}> + </button>
+                    <button className={'counter'} onClick={() => this.props.increment()}> + </button>
                 </div>
             </React.Fragment>
         )

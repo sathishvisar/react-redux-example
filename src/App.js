@@ -9,7 +9,7 @@ import Home from './views/Home'
 
 // Componets
 import CounterContainer from './components/counter/CounterContainer'
-import InputContainer from './components/input/InputContainer'
+import TodoContainer from './components/todo/TodoContainer'
 
 // Containers
 import GeneralContainer from './layout/GeneralContainer'
@@ -38,7 +38,7 @@ class App extends React.Component{
                         <Switch history={customHistory}>
                             <Route path="/" exact={true} render={defaultLayout(Home)} />
                             <Route path="/counter" render={defaultLayout(CounterContainer)} />
-                            <Route path="/input" render={defaultLayout(InputContainer)} />
+                            <Route path="/todo" render={defaultLayout(TodoContainer)} />
                         </Switch>
                     </BrowserRouter>
                 </Provider>

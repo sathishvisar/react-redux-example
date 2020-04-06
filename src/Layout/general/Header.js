@@ -8,7 +8,7 @@ class Header extends React.Component{
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/counter">Counter with Redux</Link></li>
-                    <li><Link to="/input">Input with Redux</Link></li>
+                    <li><Link to="/todo">Todo with Redux</Link></li>
                 </ul>                
             </header>
         )
