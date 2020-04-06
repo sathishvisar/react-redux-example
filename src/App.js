@@ -5,7 +5,7 @@ import { compose, createStore } from "redux";
 import { Provider } from "react-redux";
 
 // Views
-import Home from './views/Home'
+import HomeContainer from './views/Home'
 
 // Componets
 import CounterContainer from './components/counter/CounterContainer'
@@ -36,7 +36,7 @@ class App extends React.Component{
                 <Provider store={store}>
                     <BrowserRouter>
                         <Switch history={customHistory}>
-                            <Route path="/" exact={true} render={defaultLayout(Home)} />
+                            <Route path="/" exact={true} render={defaultLayout(HomeContainer)} />
                             <Route path="/counter" render={defaultLayout(CounterContainer)} />
                             <Route path="/todo" render={defaultLayout(TodoContainer)} />
                         </Switch>
