@@ -34,12 +34,17 @@ class Todo extends React.Component{
                     <div>
                         <ul>
                             {this.props.todos.map(todo =>
-                                <li key={todo.id}>{todo.text}</li> 
+                                <li 
+                                    key={todo.id}
+                                    style={{
+                                        textDecoration: todo.completed ? 'line-through' : 'none'
+                                    }}
+                                    onClick={()=> this.props.toggleTodo(todo.id)}
+                                >{todo.text}</li> 
                             )}
                         </ul>
                     </div>
                 </div>
-                {/* <span>My Name is : { this.props.users } </span> */}
             </React.Fragment>
         )
     }

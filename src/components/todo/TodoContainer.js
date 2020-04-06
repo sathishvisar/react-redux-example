@@ -1,6 +1,6 @@
 
 import { connect } from "react-redux";
-import { addTodo } from "../../store/actions/todoActions";
+import { addTodo, toggleTodo } from "../../store/actions/todoActions";
 
 import Todo from './Todo';
 
@@ -12,8 +12,11 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addTodo: (options) => {
-      dispatch(addTodo(options))
+    addTodo: (todo) => {
+      dispatch(addTodo(todo))
+    },
+    toggleTodo: (id) => {
+      dispatch(toggleTodo(id))
     }
   }
 };
